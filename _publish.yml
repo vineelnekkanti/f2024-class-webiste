@@ -1,0 +1,6 @@
+- source: project
+  netlify:
+    - id: ca714b19-66a9-428e-8cba-33c77962c5dd
+      url: 'https://omis-482-fa24.netlify.app'
+    - id: d5b2f4aa-4469-495a-8dba-569ade5a63a1
+      url: 'https://omis482-f2024-class-website.netlify.app'

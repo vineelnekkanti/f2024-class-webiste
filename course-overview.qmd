@@ -1,0 +1,28 @@
+---
+title: "OMIS-482: Predictive Business Analytics With Machine Learning"
+---
+
+```{r, echo=FALSE, results='asis'}
+# Inject JavaScript to check authentication status and redirect if necessary
+cat(htmltools::HTML('<script>
+if (localStorage.getItem("isLoggedIn") !== "true") {
+    window.location.href = "login.html";
+}
+</script>'))
+
+```
+
+## Course Description
+
+Study of advanced topics in predictive business analytics. Topics include data manipulations, data visualizations, and data modeling. Emphasis is on using and mastering powerful predictive analytics software such as R.
+
+## Intended Learning Outcomes
+
+Students enrolled in this class are expected to learn and efficiently code without supervision. Moreover, they will learn how to apply predictive modelling techniques with machine learning on case studies to see the important real-world implications of predictive analytics in business.
+
+## Class Details
+
+| Meeting             | Location         | Time                     |
+|---------------------|------------------|--------------------------|
+| Week's First Class  | Barsema Hall 333 | Tuesday 9:30 - 10:45 pm  |
+| Week's Second Class | Barsema Hall 333 | Thursday 9:30 - 10:45 pm |

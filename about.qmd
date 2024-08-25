@@ -1,0 +1,20 @@
+---
+title: "About"
+---
+
+
+```{r, echo=FALSE, results='asis'}
+# Inject JavaScript to check authentication status and redirect if necessary
+cat(htmltools::HTML('<script>
+if (localStorage.getItem("isLoggedIn") !== "true") {
+    window.location.href = "login.html";
+}
+</script>'))
+
+```
+
+About this site
+
+```{r}
+1 + 1
+```

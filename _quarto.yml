@@ -1,0 +1,97 @@
+project:
+  type: website
+  output-dir: docs
+website:
+  announcement: 
+    icon: megaphone
+    dismissable: true
+    content: "Hello Class! Welcome to OMIS-482! I hope you guys have a wonderful semester & All the Best!! -**Dr.B** "
+    type: primary
+    position: below-navbar
+  page-navigation: true
+  page-footer:
+    background: "#343a40"
+    right: "Created by Dr.B and Venkata to enhance your learning"
+    left: "&copy; Copyright 2024, Dr. B"
+  favicon: "images/logo_2.png"
+  # cookie-consent:
+  #   type: implied
+  #   style: interstitial
+  #   palette: light
+  # google-analytics:
+  #   tracking-id: "G-DRJBM9ZKMY"
+    
+  navbar:
+    background: "#343a40"
+    #logo: "images/nav_bar_logo.png"
+    title: "FALL 2024: OMIS-482 by Dr. B"
+    align: centre
+    search: false
+    collapse-below: lg
+    right:
+        - href: course-overview.qmd
+          text: Course Overview
+        - href: index.qmd
+          text: Faculty
+        - href: "https://omis482syllabusfall2024.netlify.app/"
+          text: Syllabus
+        - href: student-dashboard.qmd
+          text: Dr.B Learning Leaderboard
+        - href: useful-links.qmd
+          text: Useful Links
+    tools:
+        - icon: backpack-fill
+          text: "Blackboard"
+          url: https://webcourses.niu.edu/ultra/courses/_348339_1/outline
+          target: "_blank"
+  sidebar:
+    background: "#343a40" 
+    logo: "images/course_images/logo2.jpg"
+    pinned: true
+    align: centre
+    style: docked
+    search: true
+    contents:
+    - section: "Course Chapters"
+      contents:
+      - href: chapter0.qmd
+        text: "Chapter 0"
+      - href: chapter1.qmd
+        text: "Chapter 1"        
+    - section: "In-class Materials"
+      contents:
+      - href: week1_materials_starter.qmd
+        text: "Week 1"
+      - href: coming-soon.qmd
+        text: "Week 2"
+    - section: "Weekly Coding Checkups"
+      contents:
+      - href: coming-soon.qmd
+        text: "Week 1"
+      - href: coming-soon.qmd
+        text: "Week 2"
+    - section: "Practice R"
+      contents:
+      - href: practice_R.qmd
+        text: Practice R with WebR
+      - href: practice_R_with_quarto-live.qmd
+        text: Practice R with Quarto-Live
+
+format:
+  html:
+    theme:
+      light: cosmo
+      dark: darkly
+    toc: true
+    code-copy: true
+    code-overflow: wrap
+    code-link: true
+    #css: styles.css
+    grid:
+      body-width: 1000px
+      margin-width: 250px    
+  
+execute:
+  freeze: auto
+
+editor: visual

@@ -1,0 +1,319 @@
+---
+title: "Week1 materials"
+author: "Biagio Palese"
+format: live-html
+engine: knitr
+---
+
+## Intro to R: {style="line-height: 1.2; color: rgb(0, 0, 0); font-family: \"Lucida Grande\", serif; font-style: normal; font-variant-ligatures: none; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; caret-color: rgb(0, 0, 0); white-space: break-spaces; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;"}
+
+The following sections of our book R for Data Science( [first portion of the course book](http://127.0.0.1:15585/#0){style="text-decoration: underline; color: rgb(0, 0, 255) !important;"} ) are included in the first week:
+
+-   [Introduction](http://127.0.0.1:15585/#0){style="text-decoration: underline; color: rgb(0, 0, 255) !important;"}
+
+-   [Workflow basics](http://127.0.0.1:15585/#0){style="text-decoration: underline; color: rgb(0, 0, 255) !important;"}
+
+### Link to other resources {style="font-size: 1.25em !important; line-height: 1.2; color: rgb(0, 0, 0); font-family: \"Lucida Grande\", serif; font-style: normal; font-variant-ligatures: none; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; caret-color: rgb(0, 0, 0); white-space: break-spaces; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;"}
+
+-   Internal help: [posit support](http://127.0.0.1:15585/#0){style="text-decoration: underline; color: rgb(0, 0, 255) !important;"}
+
+-   External help: [stackoverflow](http://127.0.0.1:15585/#0){style="text-decoration: underline; color: rgb(0, 0, 255) !important;"}
+
+-   Additional materials: [posit resources](http://127.0.0.1:15585/#0){style="text-decoration: underline; color: rgb(0, 0, 255) !important;"}
+
+-   Cheat Sheets: [posit cheat sheets](http://127.0.0.1:15585/#0){style="text-decoration: underline; color: rgb(0, 0, 255) !important; margin-bottom: 0.1em;"}
+
+While I use the book as a reference the materials provided to you are custom made and include more activities and resources. If you understand the materials covered in this document there is no need to refer to other sources. If you have any troubles with the materials don't hesitate to contact me or check the above sources.
+
+## Getting Started aka Running code in R {style="line-height: 1.2; color: rgb(0, 0, 0); font-family: \"Lucida Grande\", serif; font-style: normal; font-variant-ligatures: none; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; caret-color: rgb(0, 0, 0); white-space: break-spaces; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;"}
+
+To run and execute code inside a code chunk simply click the `Run Code` button or make sure that your cursor is anywhere in the line that you want to execute and press Cmd(Mac)/Ctrl(Windows) + Enter to run a single line of code or highlight multiple line and then press Cmd/Ctrl + Enter. Let's try with the below code
+
+```{webr}
+#| autorun: false
+#| startover: false
+print("Welcome to the magic world of R")
+```
+
+### Packages installation
+
+You will need to install the packages first before be able to use functions and datasets they contain. This is a one time task unless you uninstall R& RStudio or you change your computer. We will need to install a few packages, among them the most important is tidyverse. Tidyverse is the main package for the first part of the semester, it is a bundle package (meaning it contains multiple packages that have different purposes e.g., dplyr for manipulations, ggplot for visualizations)
+
+```{webr}
+#| startover: false
+install.packages("tidyverse")# install one packge at the time
+install.packages(
+
+c("arrow", "babynames", "curl", "duckdb",
+
+"gapminder",
+
+"ggrepel", "ggridges", "ggthemes",
+
+"hexbin", "janitor", "Lahman",
+
+"leaflet", "maps", "nycflights13",
+
+"openxlsx", "palmerpenguins",
+
+"repurrrsive", "tidymodels", "writexl")
+
+)#install multiple packages that will be useful throught the semester
+```
+
+### Load packages
+
+This is a critical task. Every time you open a new RStudio session you will need to load the packages. Failing to do so will incur in the most common errors among beginners (e.g., function not found or object not found)
+
+```{webr}
+#| startover: false
+library(tidyverse)
+library(nycflights13)
+
+```
+
+Take careful note of the conflicts message that’s printed when you load the tidyverse. It tells you that dplyr overwrites some functions in base R. If you want to use the base version of these functions after loading dplyr, you’ll need to use their full names: stats::filter() and stats::lag().
+
+### Need help
+
+If you are stuck promise me not to quit! You are a beginner so it will happen. Just pay attention to the error message and look at the below option to find a solution:
+
+-   look into the R community or Stackoverflow
+
+-   leverage LLM (e.g., ChatGPT)
+
+-   use help with R documentation (e.g., try ?mean below)
+
+-   check examples of how to use a certain function (e.g., try example("mean") below)
+
+**NB During the exams you can only use the last two options so make sure you master them!**
+
+```{webr}
+#| autorun: false
+#| startover: false
+?mean# help on a specific function
+
+```
+
+```{webr}
+#| autorun: false
+#| startover: false
+example("mean")# example on how to use the function
+
+```
+
+## Workflow basic script
+
+You can use R as a calculator..
+
+```{webr}
+#| autorun: false
+#| startover: false
+#run basic calculations
+10 / 100 * 30
+
+```
+
+```{webr}
+#| autorun: false
+#| startover: false
+#run basic calculations
+(59 + 73 + 2) / 3
+
+```
+
+```{webr}
+#| autorun: false
+#| startover: false
+#run basic calculations
+sum(10 / 2, 3)
+```
+
+### Creating Object using the Assignement operator
+
+But it can do much more.. so we need to learn how to create and manage object using the assignment operator.
+
+```{webr}
+#| autorun: false
+#| startover: false
+class_size <- 50
+```
+
+`<-` is the assign operator and it means you are assigning value to an object/variable. You can then call and use the object created later.
+
+The shortcut option/alt + - will create the assign symbol
+
+### How to manage object?
+
+```{webr}
+#| autorun: false
+#| startover: false
+class_size# write the object name to print its content
+```
+
+```{webr}
+#| autorun: false
+#| startover: false
+ls()#check how many object you have created
+```
+
+```{webr}
+#| autorun: false
+#| startover: false
+rm(class_size)#remove object that you don't need
+
+```
+
+```{webr}
+#| autorun: false
+#| startover: false
+ls()#check how many object you have created
+```
+
+#### How to name your objects?
+
+Object names must start with a letter, and can only contain letters, numbers, \_ and .. You want your object names to be descriptive, so you'll need a convention for multiple words.
+
+```{webr}
+#| autorun: false
+#| startover: false
+#| completion: true
+welcome_to_rstudio <- "Welcome" #always use meaningful names but if they are long separate them with a _.
+
+```
+
+```{webr}
+#| autorun: false
+#| completion: true
+#| startover: false
+welcome_to_rstudio# by running this line you are able to inspect the object/variable
+```
+
+```{webr}
+#| autorun: false
+#| startover: false
+#| completion: true
+
+this_is_a_really_long_name_completely_unnecessary <- 2.5 # instead of writing the entire name learn that the tab key allows you to autocomplete
+
+```
+
+```{webr}
+#| autorun: false
+#| startover: false
+#| completion: true
+this #try the autocompletion feature; we will cover other trick about the tab key later
+```
+
+Now let's check your object creation understanding. Given the object below:
+
+```{webr}
+#| autorun: false
+#| startover: false
+r_rocks <- 2 ^ 3
+```
+
+What happen if I run the following lines; why?
+
+```{webr}
+#| autorun: false
+#| startover: false
+r_rock
+
+```
+
+```{webr}
+#| autorun: false
+#| startover: false
+R_rocks
+```
+
+#### Activity 1: Create objects by using the assignment operator (6 minutes) \[write code just below each instruction; finally use Teams RStudio - Forum channel for help on the in-class activities/homework or if you have other questions\]
+
+#a. An object named "today" that is equal to todays' date
+
+```{webr}
+#| autorun: false
+#| completion: true
+
+```
+
+#b. An object named "forty" that is equal to 6\*5 +10
+
+```{webr}
+#| autorun: false
+#| completion: true
+
+```
+
+#c. An object named "basic_sum" that is equal to 1+2+3+4+5
+
+```{webr}
+#| autorun: false
+#| completion: true
+
+```
+
+#d. Write also the code to print the today object
+
+```{webr}
+#| autorun: false
+#| completion: true
+
+```
+
+### Using functions
+
+Functions are the real reason why you should use R. There are too many functions to go over or even try remember. In fact, each package will give you access to a different set of functions and sometimes they will use the same name (e.g., remember the conflict with the filter function above). However, the good news is that you don't need to memorize them but understand how they work. Let's start with a basic example, how can we create a sequence of numbers in R?
+
+```{webr}
+#| autorun: false
+#| completion: true
+# we want to call the sequence function seq() but press tab and navigate all the functions that start with se
+
+se# Press TAB once more when you’ve selected the function you want. RStudio will add matching opening (() and closing ()) parentheses for you.
+
+
+```
+
+```{webr}
+#| autorun: false
+#| completion: true
+y <- seq(1, 10, length.out = 5 #if a function is incomplete R will not think that you are done. Run it and see what happens. Press Esc if you want to discard the operation
+
+#keep in mind that unless your script generate an error the diagnostics (red cross next to the line of code) are there to help you but you can ignore them without any harm, in case the issue is only cosmetic.
+```
+
+#### Activity 2: Use basic functions (8 minutes) \[write code just below each instruction; finally use Teams RStudio - Forum channel for help on the in class activities/homework or if you have other questions\]
+
+#a. Learn more about the sum function (hint: use the help feature covered today)
+
+```{webr}
+#| autorun: false
+#| completion: true
+
+```
+
+#b. Use the sum function to compute the sum of all the numbers from 1 to 1000.
+
+```{webr}
+#| autorun: false
+#| completion: true
+
+```
+
+#c. Assign the above function to an object named "my_first_function"
+
+```{webr}
+#| autorun: false
+#| completion: true
+
+```
+
+#d. Print the object "my_first_function"
+
+```{webr}
+#| autorun: false
+#| completion: true
+
+```

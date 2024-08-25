@@ -1,0 +1,15 @@
+{
+  "hash": "a781e1bf3157ec8b64167af84fd70cd4",
+  "result": {
+    "engine": "knitr",
+    "markdown": "---\ntitle: \"OMIS-482: Predictive Business Analytics With Machine Learning\"\n---\n\n<script>\nif (localStorage.getItem(\"isLoggedIn\") !== \"true\") {\n    window.location.href = \"login.html\";\n}\n</script>\n\n\n\n## Course Description\n\nStudy of advanced topics in predictive business analytics. Topics include data manipulations, data visualizations, and data modeling. Emphasis is on using and mastering powerful predictive analytics software such as R.\n\n## Intended Learning Outcomes\n\nStudents enrolled in this class are expected to learn and efficiently code without supervision. Moreover, they will learn how to apply predictive modelling techniques with machine learning on case studies to see the important real-world implications of predictive analytics in business.\n\n## Class Details\n\n| Meeting             | Location         | Time                     |\n|---------------------|------------------|--------------------------|\n| Week's First Class  | Barsema Hall 333 | Tuesday 9:30 - 10:45 pm  |\n| Week's Second Class | Barsema Hall 333 | Thursday 9:30 - 10:45 pm |\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

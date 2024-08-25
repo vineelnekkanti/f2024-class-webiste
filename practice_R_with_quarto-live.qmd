@@ -1,0 +1,132 @@
+---
+title: R Practise
+engine: knitr
+format: live-html
+---
+
+```{r, echo=FALSE, results='asis'}
+# Inject JavaScript to check authentication status and redirect if necessary
+cat(htmltools::HTML('<script>
+if (localStorage.getItem("isLoggedIn") !== "true") {
+    window.location.href = "login.html";
+}
+</script>'))
+
+```
+
+{{< include ./_extensions/r-wasm/live/_knitr.qmd >}}
+
+This interface helps you to improve your R skills. Here you can access to a data set called `starwars`
+
+::: callout-tip
+# Tip
+
+You don't really need a laptop to practice here!😉
+:::
+
+# Load the package
+
+```{webr}
+install.packages("tidyverse", quiet=FALSE)
+library(tidyverse)
+
+# Add here whatever packages you may wanted to add here for your practice.
+
+```
+
+::: callout-important
+# Caution
+
+The code on this page runs server-less. No code will be saved. Make sure to save your work some where else.
+:::
+
+# Manipulations
+
+For example: Print the `starwars` data set.
+
+```{webr}
+#| persist: true
+#| autorun: false
+starwars
+```
+
+::: callout-note
+# Note
+
+If you are facing `object not found` issue while running the above `starwars` chunk. Try reloading the the URL or try re-running the package chunk.
+:::
+
+Great! Analyze the `starwars`data set and start playing around.
+
+```{webr}
+#| persist: true
+#| autorun: false
+
+```
+
+```{webr}
+#| persist: true
+#| autorun: false
+
+```
+
+```{webr}
+#| persist: true
+#| autorun: false
+
+```
+
+```{webr}
+#| persist: true
+#| autorun: false
+
+```
+
+## Use Pipes
+
+::: callout-note
+# Note:
+
+In order to use pipes, use `Ctrl + Shift + M` on windows (or) `Cmd + Shift + M` on Mac. If you are practicing from mobile, copy from here: `|>`
+:::
+
+```{webr}
+#| persist: true
+#| autorun: false
+```
+
+```{webr}
+#| persist: true
+#| autorun: false
+
+```
+
+```{webr}
+#| persist: true
+#| autorun: false
+
+```
+
+# Visualisations
+
+Here's a basic visualization that I did using `starwars` dataset.
+
+```{webr}
+#| autorun: false
+ggplot(data = starwars, aes(x = gender)) +
+  geom_bar(fill = "darkgrey")
+```
+
+```{webr}
+
+```
+
+```{webr}
+
+```
+
+```{webr}
+
+```
+
+

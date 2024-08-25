@@ -1,0 +1,1 @@
+Sitemap: https://omis482-f2024-class-website.netlify.app/sitemap.xml
