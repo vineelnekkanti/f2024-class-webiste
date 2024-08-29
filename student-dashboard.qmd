@@ -117,10 +117,7 @@ final_weekly_activity_table_gt <- final_weekly_activity_table |>
     Points = md("**Points**")
   ) |> 
   tab_header(
-    title = md("**Weekly Coding Checkups Score**")
-  ) |> 
-  tab_footnote(
-    footnote = "The scores tend to change based on your performance along the semester."
+    title = md("**Coding Checkups Score**")
   ) |> 
   cols_width(
     everything() ~ px(100)  # Adjust the width as needed
@@ -158,9 +155,6 @@ final_inclass_participation_table_gt <- final_inclass_participation_table  |>
   tab_header(
     title = md("**In-Class Participation**")
   ) |>
-  tab_footnote(
-    footnote = "The scores tend to change based on your performance along the semester."
-  ) |>
   cols_width(
     everything() ~ px(100)  # Adjust the width as needed
   ) |> 
@@ -179,9 +173,6 @@ final_teams_participation_table_gt <- final_teams_participation_table  |>
   tab_header(
     title = md("**Teams Participation**")
   ) |> 
-  tab_footnote(
-    footnote = "The scores tend to change based on your performance along the semester."
-  ) |>
   cols_width(
     everything() ~ px(100)  # Adjust the width as needed
   ) |> 
@@ -199,9 +190,6 @@ final_professionalism_table_gt <- final_professionalism_table  |>
   ) |> 
   tab_header(
     title = md("**Professionalism**")
-  ) |>
-  tab_footnote(
-    footnote = "The scores tend to change based on your performance along the semester."
   ) |>
   cols_width(
     everything() ~ px(100)  # Adjust the width as needed
@@ -221,9 +209,6 @@ final_overall_performance_table_gt <- final_overall_performance_table  |>
   tab_header(
     title = md("**Overall Learning Score**")
   )  |> 
-  tab_footnote(
-    footnote = "The scores tend to change based on your performance along the semester."
-  ) |>
   cols_width(
     everything() ~ px(100)  # Adjust the width as needed
   ) |> 
@@ -265,7 +250,7 @@ ojs_define(final_weekly_activity_table_html, final_survey_test_table_html, final
 ```{ojs}
 //| echo: false
 import { Select } from "@observablehq/inputs";
-viewof tableSelector = Select(["Overall Learning Score", "Weekly Coding Checkups Score", "In-Class Participation", "Teams Participation", "Professionalism", "Others"], {label: "Choose a category:"})
+viewof tableSelector = Select(["Overall Learning Score", "Coding Checkups Score", "In-Class Participation", "Teams Participation", "Professionalism", "Others"], {label: "Choose a category:"})
 
 
 ```
@@ -281,7 +266,7 @@ html`<div id="table-container" style="overflow-x:auto; max-width: 100%;"></div>`
 
   if (selectedTable === "Overall Learning Score") {
     tableHTML = final_overall_performance_table_html;
-  } else if (selectedTable === "Weekly Coding Checkups Score") {
+  } else if (selectedTable === "Coding Checkups Score") {
     tableHTML = final_weekly_activity_table_html;
   } else if (selectedTable === "In-Class Participation") {
     tableHTML = final_inclass_participation_table_html;
@@ -297,7 +282,7 @@ html`<div id="table-container" style="overflow-x:auto; max-width: 100%;"></div>`
 
   document.getElementById("table-container").innerHTML = tableHTML;
   // Explicitly return nothing to prevent "undefined" from being displayed
-  return "Reach out to Dr. B or T.A for any queries regarding your scores.";
+  return "Reach out to Dr. B or Venkata for any queries regarding your scores.";
 }
 
 ```

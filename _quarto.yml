@@ -35,6 +35,8 @@ website:
           text: Faculty
         - href: "https://omis482syllabusfall2024.netlify.app/"
           text: Syllabus
+        - href: "https://omis482syllabusfall2024.netlify.app/schedule.html"
+          text: Schedule          
         - href: student-dashboard.qmd
           text: Dr.B Learning Leaderboard
         - href: useful-links.qmd
@@ -56,26 +58,30 @@ website:
       contents:
       - href: chapter0.qmd
         text: "Chapter 0"
-      - href: chapter1.qmd
-        text: "Chapter 1"        
+      - href: coming-soon.qmd
+        text: "Chapter 1"
     - section: "In-class Materials"
       contents:
-      - href: week1_materials_starter.qmd
+      - href: https://omis482-week1-teaching-materials.netlify.app/
         text: "Week 1"
       - href: coming-soon.qmd
         text: "Week 2"
-    - section: "Weekly Coding Checkups"
+      - href: coming-soon.qmd
+        text: "Week 3"
+    - section: "Coding Checkups"
       contents:
       - href: coming-soon.qmd
         text: "Week 1"
       - href: coming-soon.qmd
         text: "Week 2"
+      - href: coming-soon.qmd
+        text: "Week 3"
     - section: "Practice R"
       contents:
-      - href: practice_R.qmd
-        text: Practice R with WebR
-      - href: practice_R_with_quarto-live.qmd
-        text: Practice R with Quarto-Live
+      #- href: practice_R.qmd
+      #  text: Practice R with WebR
+      - href: coming-soon.qmd
+        text: Practice Manipulations
 
 format:
   html:
