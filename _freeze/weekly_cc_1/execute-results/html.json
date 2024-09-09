@@ -1,0 +1,15 @@
+{
+  "hash": "02aa1a272993a1b390a09c052d14ad03",
+  "result": {
+    "engine": "knitr",
+    "markdown": "---\ntitle: Weekly Coding Checkup 1\nengine: knitr\nformat: live-html\n---\n\n<script>\nif (localStorage.getItem(\"isLoggedIn\") !== \"true\") {\n    window.location.href = \"login.html\";\n}\n</script>\n\n::: {.cell}\n\n:::\n\n\n\n\n::: {.callout-note}\n\nWelcome! We finally start working on the Dr. B & Class project. During the entire semester you will apply what we learned in class in a set of tasks and scenarios custom designed for you. Please remember that it is important that the code that you submit is your own code and not somebody else work. It is fine to make mistakes but only by practicing in RStudio you can get a better grasp of the software. I also want you to try building your document as an official report for a potential company (Dreaming Diamonds LLC) for which you are getting to know and explore the diamonds dataset (e.g., spend time on storytelling, commenting results and providing insights and conclusions when possible).\n:::\n\n\n\n\n\n\n\n::: {.callout-caution}\n\nUse diamonds dataset to answer the questions.\n:::\n\n1) Load the tidyverse package.(1 point)\n\n\n\n::: {.cell persist='true' autorun='false'}\n```{webr}\n#| persist: true\n#| autorun: false\n\n```\n:::\n\n\n\n2) Assign the dataset diamonds (loaded with tidyverse) to an object named “diamonds”. Use the ls() function to make sure you have created the object correctly. (1 point)\n\n\n\n::: {.cell persist='true' autorun='false'}\n```{webr}\n#| persist: true\n#| autorun: false\n\n```\n:::\n\n\n\n3) Use the mean function to compute the average of the “price” variable/column. Use the help function to learn more about the mean function. [Hint: use diamonds$price inside the function). What is the average price of the diamonds in your dataset?] (1 point)\n\n\n\n::: {.cell persist='true' autorun='false'}\n```{webr}\n#| persist: true\n#| autorun: false\n\n```\n:::\n\n\n\n4) Use the median function to compute the median of the “carat” variable/column. Use the help function to learn more about the median function. [Hint: use diamonds$carat inside the function). What is the median carat of the diamonds in your dataset?] (1 point)\n\n\n\n::: {.cell persist='true' autorun='false'}\n```{webr}\n#| persist: true\n#| autorun: false\n\n```\n:::\n\n\n\n\n::: callout-note\n# Reminder: \nMake sure that you Run all the code chunks and check your outputs here and transfer all your solutions to this form:\n\n<a href=\"https://forms.office.com/r/D7NxFr2p2a?embed=true\" target=\"_blank\">Submit here</a></p>\n \n:::\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

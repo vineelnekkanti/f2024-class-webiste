@@ -64,7 +64,7 @@ website:
       contents:
       - href: https://omis482-week1-teaching-materials.netlify.app/
         text: "Week 1"
-      - href: coming-soon.qmd
+      - href: https://omis482-week2-teaching-materials.netlify.app/
         text: "Week 2"
       - href: coming-soon.qmd
         text: "Week 3"
@@ -76,12 +76,10 @@ website:
         text: "Week 2"
       - href: coming-soon.qmd
         text: "Week 3"
-    - section: "Practice R"
-      contents:
-      #- href: practice_R.qmd
-      #  text: Practice R with WebR
-      - href: coming-soon.qmd
-        text: Practice Manipulations
+#    - section: "R Challenges"
+#      contents:
+#      - href: coming-soon.qmd
+#        text: Challenge 1
 
 format:
   html:
