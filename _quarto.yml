@@ -5,7 +5,7 @@ website:
   announcement: 
     icon: megaphone
     dismissable: true
-    content: "Hello Class! Welcome to OMIS-482! I hope you guys have a wonderful semester & All the Best!! -**Dr.B** "
+    content: "Hello Class! We are half way through the semester! I hope you guys are enjoying the course -**Dr.B** "
     type: primary
     position: below-navbar
   page-navigation: true
@@ -14,12 +14,6 @@ website:
     right: "Created by Dr.B and Venkata to enhance your learning"
     left: "&copy; Copyright 2024, Dr. B"
   favicon: "images/logo_2.png"
-  # cookie-consent:
-  #   type: implied
-  #   style: interstitial
-  #   palette: light
-  # google-analytics:
-  #   tracking-id: "G-DRJBM9ZKMY"
     
   navbar:
     background: "#343a40"
@@ -39,6 +33,8 @@ website:
           text: Schedule          
         - href: student-dashboard.qmd
           text: Dr.B Learning Leaderboard
+        - href: challenges_winner_template.qmd
+          text: "The Challenges Hall of Fame"
         - href: useful-links.qmd
           text: Useful Links
     tools:
@@ -56,30 +52,49 @@ website:
     contents:
     - section: "Course Chapters"
       contents:
-      - href: chapter0.qmd
+      - href: https://chapter0-book-482.netlify.app/chapter0.html
         text: "Chapter 0"
-      - href: coming-soon.qmd
+      - href: https://chapter1-book-482.netlify.app/chapter1.html
         text: "Chapter 1"
+      - href:  https://chapter2-book-482.netlify.app/chapter2.html
+        text: "Chapter 2"
     - section: "In-class Materials"
       contents:
       - href: https://omis482-week1-teaching-materials.netlify.app/
         text: "Week 1"
       - href: https://omis482-week2-teaching-materials.netlify.app/
         text: "Week 2"
-      - href: coming-soon.qmd
+      - href: https://omis482-week3-teaching-materials.netlify.app/
         text: "Week 3"
+      - href: https://omis482-week4-teaching-materials.netlify.app/
+        text: "Week 4"
+      - href: https://omis482-week5-teaching-materials.netlify.app/
+        text: "Week 5"  
+      - href: https://omis482-week8-teaching-materials.netlify.app/
+        text: "Week 8"      
+      - href: https://omis482-week10-teaching-materials.netlify.app/
+        text: "Week 10" 
     - section: "Coding Checkups"
       contents:
-      - href: coming-soon.qmd
+      - href: https://weekly-coding-checkups.netlify.app/wcc1.html
         text: "Week 1"
-      - href: coming-soon.qmd
+      - href: https://weekly-coding-checkups.netlify.app/wcc2.html
         text: "Week 2"
-      - href: coming-soon.qmd
+      - href: https://weekly-coding-checkups.netlify.app/wcc3.html
         text: "Week 3"
+      - href: https://weekly-coding-checkups.netlify.app/wcc4.html
+        text: "Week 4"  
+      - href: https://weekly-coding-checkups.netlify.app/wcc5.html
+        text: "Week 5"
+      - href: https://weekly-coding-checkups.netlify.app/wcc9.html
+        text: "Week 9"  
+      - href: coming-soon.qmd
+        text: "Week 10"        
 #    - section: "R Challenges"
 #      contents:
 #      - href: coming-soon.qmd
 #        text: Challenge 1
+
 
 format:
   html:

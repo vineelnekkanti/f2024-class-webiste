@@ -15,6 +15,39 @@ if (localStorage.getItem("isLoggedIn") !== "true") {
 
 ```
 
+```{r, echo=FALSE, results='asis'}
+# Embed the Confetti library and the confetti animation script
+cat(htmltools::HTML('
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+<script>
+  var end = Date.now() + (60 * 1000);
+  var colors = ["#C8102E", "#343a40"];
+
+  (function frame() {
+    confetti({
+      particleCount: 2,   
+      angle: 60,
+      spread: 55,
+      origin: { x: 0 },
+      colors: colors
+    });
+    confetti({
+      particleCount: 2,
+      angle: 120,
+      spread: 55,
+      origin: { x: 1 },
+      colors: colors
+    });
+
+    if (Date.now() < end) {
+      requestAnimationFrame(frame);
+    }
+  }());
+</script>
+'))
+
+```
+
 ```{r, Calling the packages}
 #| include: false
 #| echo: false
@@ -38,19 +71,22 @@ modified_data <- data |>
     week_3 = "weekcc3",
     week_4 = "weekcc4",
     week_5 = "weekcc5",
-    week_6 = "weekcc6",
+    week_9 = "weekcc9",
+    week_10 = "weekcc10",
     tech_test = "Technology test",
     preliminary_survey = "Preliminary survey",
     midterm_survey = "Midterm survey",
     exit_survey = "Exit Survey",
     in_class_participation = "In-class participation",
-    teams_participation = "Teams participationon"
+    teams_participation = "Teams participationon",
+    challenges = "Challenges"
   ) |>
   mutate(
-    "Weekly Activity Overall" = week_1 + week_2 + week_3 + week_4 + week_5 + week_6,
+    "Weekly Activity Overall" = week_1 + week_2 + week_3 + week_4 + week_5 + week_9+week_10,
     "Survey/Poll/Tech. Test" = tech_test + preliminary_survey + midterm_survey + exit_survey,
     "In-Class Participation" = in_class_participation,
-    "Teams Participation" = teams_participation
+    "Teams Participation" = teams_participation,
+    "Challenges" = challenges
   )
 
 ```
@@ -98,8 +134,16 @@ final_professionalism_table <- modified_data |>
   select(Rank, Name, Points) |> 
   filter(!is.na(Name))
 
+final_challenges_table <- modified_data |> 
+  select(Name, `Challenges`) |> 
+  arrange(desc(`Challenges`)) |> 
+  mutate(Rank = dense_rank(desc(`Challenges`)), 
+         Points = round(`Challenges`, 2)) |> 
+  select(Rank, Name, Points) |> 
+  filter(!is.na(Name))
+
 final_overall_performance_table <- modified_data |> 
-  mutate(Points= `Weekly Activity Overall`+ `Survey/Poll/Tech. Test` + `In-Class Participation` + `Teams Participation` + Professionalism) |> 
+  mutate(Points= `Weekly Activity Overall`+ `Survey/Poll/Tech. Test` + `In-Class Participation` + `Teams Participation` + Professionalism + Challenges) |> 
   arrange(desc(Points)) |> 
   mutate(Rank = dense_rank(desc(Points)), 
          Points = round(Points, 2)) |> 
@@ -201,6 +245,24 @@ final_professionalism_table_gt <- final_professionalism_table  |>
     columns = c(Name,Rank,Points)
   )
 
+final_challenges_table_gt <- final_challenges_table  |> 
+  gt() |> 
+  cols_label(
+    Rank = md("**Rank**"),
+    Name = md("**Name**"),
+    Points = md("**Points**")
+  ) |> 
+  tab_header(
+    title = md("**Challenges**")
+  ) |>
+  cols_width(
+    everything() ~ px(100)  # Adjust the width as needed
+  ) |> 
+  cols_align(
+    align = "center",
+    columns = c(Name,Rank,Points)
+  )
+
 final_overall_performance_table_gt <- final_overall_performance_table  |> 
   gt() |> 
   cols_label(
@@ -239,6 +301,7 @@ final_survey_test_table_html <- as.character(as_raw_html(final_survey_test_table
 final_inclass_participation_table_html <- as.character(as_raw_html(final_inclass_participation_table_gt))
 final_teams_participation_table_html <- as.character(as_raw_html(final_teams_participation_table_gt))
 final_professionalism_table_html <- as.character(as_raw_html(final_professionalism_table_gt))
+final_challenges_table_html <- as.character(as_raw_html(final_challenges_table_gt))
 final_overall_performance_table_html <- as.character(as_raw_html(final_overall_performance_table_gt))
 
 ```
@@ -246,13 +309,13 @@ final_overall_performance_table_html <- as.character(as_raw_html(final_overall_p
 ```{r, Pass data to OJS}
 #| include: false
 #| echo: false
-ojs_define(final_weekly_activity_table_html, final_survey_test_table_html, final_inclass_participation_table_html,final_teams_participation_table_html, final_professionalism_table_html, final_overall_performance_table_html)
+ojs_define(final_weekly_activity_table_html, final_survey_test_table_html, final_inclass_participation_table_html,final_teams_participation_table_html, final_professionalism_table_html,final_challenges_table_html, final_overall_performance_table_html)
 ```
 
 ```{ojs}
 //| echo: false
 import { Select } from "@observablehq/inputs";
-viewof tableSelector = Select(["Overall Learning Score", "Coding Checkups Score", "In-Class Participation", "Teams Participation", "Professionalism", "Others"], {label: "Choose a category:"})
+viewof tableSelector = Select(["Overall Learning Score", "Coding Checkups Score", "In-Class Participation", "Teams Participation", "Professionalism", "Challenges", "Others"], {label: "Choose a category:"})
 
 
 ```
@@ -276,6 +339,8 @@ html`<div id="table-container" style="overflow-x:auto; max-width: 100%;"></div>`
     tableHTML = final_teams_participation_table_html;
   } else if (selectedTable === "Professionalism") {
     tableHTML = final_professionalism_table_html;
+  } else if (selectedTable === "Challenges") {
+    tableHTML = final_challenges_table_html;
   } else if (selectedTable === "Others") {
     tableHTML = final_survey_test_table_html;
   } else {

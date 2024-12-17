@@ -21,7 +21,7 @@ Download and install RStudio: <https://posit.co/download/rstudio-desktop/>
 ## About R Packages
 
 | Package            | Source                                                              |
-|--------------------|----------------------------------------------------|
+|---------------------|---------------------------------------------------|
 | Data Manipulation  | [dplyr.tidyverse.org](https://dplyr.tidyverse.org/)                 |
 | Data Visualization | [ggplot2.tidyverse.org](https://ggplot2.tidyverse.org/)             |
 | Data Modeling      | [www.tidymodels.org/packages](https://www.tidymodels.org/packages/) |
@@ -37,7 +37,7 @@ Download and install RStudio: <https://posit.co/download/rstudio-desktop/>
 ## Office Hours
 
 | Instructor         | Booking URL                                                                                             |
-|------------------|------------------------------------------------------|
+|-------------------|-----------------------------------------------------|
 | Dr. B &/or Venkata | [Book Here](https://outlook.office365.com/book/OfficeHoursSpring20241@mail.niu.edu/?ae=true&login_hint) |
 
 ::: callout-note

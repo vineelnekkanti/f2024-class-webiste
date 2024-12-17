@@ -167,3 +167,55 @@ While I use the book as a reference the materials provided to you are custom mad
 -   **NB in this class we have a dynamic book & materials in which I take care of all the boring things for you so that you just focus on LEARNING ;-)**
 
 Ok great! This should be enough to start your journey. See you for more in the next chapter!
+
+```{r, echo=FALSE, results='asis'}
+# Embed the Confetti library and add the confetti animation script with scroll detection
+cat(htmltools::HTML('
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+<script>
+  var confettiTriggered = false;
+  var duration = 15 * 1000;
+  var animationEnd = Date.now() + duration;
+  var defaults = { startVelocity: 30, spread: 360, ticks: 60, zIndex: 0 };
+
+  function randomInRange(min, max) {
+    return Math.random() * (max - min) + min;
+  }
+
+  // Function to start the confetti effect
+  function startConfetti() {
+    if (!confettiTriggered) {
+      confettiTriggered = true; // Prevent confetti from starting multiple times
+      var interval = setInterval(function() {
+        var timeLeft = animationEnd - Date.now();
+
+        if (timeLeft <= 0) {
+          clearInterval(interval); // Stop the animation when the duration ends
+        }
+
+        var particleCount = 50 * (timeLeft / duration);
+        // Since particles fall down, start a bit higher than random
+        confetti({ 
+          ...defaults, 
+          particleCount, 
+          origin: { x: randomInRange(0.1, 0.3), y: Math.random() - 0.2 } 
+        });
+        confetti({ 
+          ...defaults, 
+          particleCount, 
+          origin: { x: randomInRange(0.7, 0.9), y: Math.random() - 0.2 } 
+        });
+      }, 250);
+    }
+  }
+
+  // Event listener to detect when the user scrolls to the bottom of the page
+  window.addEventListener("scroll", function() {
+    // Check if the user has scrolled to the bottom of the page
+    if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
+      startConfetti();
+    }
+  });
+</script>
+'))
+```

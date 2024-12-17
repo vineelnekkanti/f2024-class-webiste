@@ -1,0 +1,17 @@
+{
+  "hash": "bb3e0a58ad71a90e1428b42bef719386",
+  "result": {
+    "engine": "knitr",
+    "markdown": "---\nformat: \n  dashboard:\n    scrolling: false\n    \ntitle: The Challenges Hall of Fame\n---\n\n\n\n\n\n<!-- Google Font Import for Caveat -->\n\n<link href=\"https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&family=Poppins:wght@400;700&display=swap\" rel=\"stylesheet\">\n\n\n\n\n\n```{=html}\n<style>\n  /* Apply the Caveat font to the winner name */\n  .winner {\n    font-family: 'Caveat', cursive;\n    font-size: 32px;\n    font-weight: bold;\n  }\n\n  /* Apply the Poppins font to the announcement text */\n  .announcement {\n    font-family: 'Poppins', sans-serif;\n    font-size: 22px;\n    text-align: center;\n  }\n\n  /* Background colors for each announcement block */\n  .lavender { background-color: Lavender; }\n  .lightcyan { background-color: LightCyan; }\n  .mistyrose { background-color: MistyRose; }\n  .honeydew { background-color: HoneyDew; }\n  .lavenderblush { background-color: LavenderBlush; }\n</style>\n```\n\n\n\n\n\n::: {.announcement .lavender}\n🎉 First Set Challenges Winner 🎉<br> [Erika]{.winner}\n:::\n\n::: {.announcement .lightcyan}\n🎉 Second Set Challenges Winner 🎉<br> [Ayush, Cameron]{.winner}\n:::\n\n::: {.announcement .mistyrose}\n🎉 Third Set Challenges Winner 🎉<br> [Ashton, Erika]{.winner}\n:::\n\n::: {.announcement .honeydew}\n🎉 Fourth Set Challenges Winner 🎉<br> [Cameron, Galilea, Erika]{.winner}\n:::\n\n::: {.announcement .lavender}\n🎉 Fifth Set Challenges Winner 🎉<br> [Erika, Luz, Tony]{.winner}\n:::\n\n::: {.announcement .lightcyan}\n🎉 Sixth Set Challenges Winner 🎉<br> [Ashton]{.winner}\n:::\n\n::: {.announcement .mistyrose}\n🎉 Seventh Set Challenges Winner 🎉<br> [Ibrahim, Erika]{.winner}\n:::\n\n\n\n\n\n\n<script src=\"https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js\"></script>\n<script>\n  var end = Date.now() + (1 * 1000);\n  var colors = [\"#C8102E\", \"#343a40\"];\n  (function frame() {\n    confetti({\n      particleCount: 2,   \n      angle: 60,\n      spread: 55,\n      origin: { x: 0 },\n      colors: colors\n    });\n    confetti({\n      particleCount: 2,\n      angle: 120,\n      spread: 55,\n      origin: { x: 1 },\n      colors: colors\n    });\n    if (Date.now() < end) {\n      requestAnimationFrame(frame);\n    }\n  }());\n</script>\n<script>\n  setTimeout(function() {\n    var duration = 40 * 1000;\n    var animationEnd = Date.now() + duration;\n    var defaults = { startVelocity: 20, spread: 360, ticks: 60, zIndex: 0 };\n    function randomInRange(min, max) {\n      return Math.random() * (max - min) + min;\n    }\n    var interval = setInterval(function() {\n      var timeLeft = animationEnd - Date.now();\n      if (timeLeft <= 0) {\n        return clearInterval(interval);\n      }\n      var particleCount = 50 * (timeLeft / duration);\n      confetti({ ...defaults, particleCount, origin: { x: randomInRange(0.1, 0.3), y: Math.random() - 0.2 } });\n      confetti({ ...defaults, particleCount, origin: { x: randomInRange(0.7, 0.9), y: Math.random() - 0.2 } });\n    }, 250);\n  }, 1500); \n</script>\n",
+    "supporting": [
+      "challenges_winner_template_files"
+    ],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

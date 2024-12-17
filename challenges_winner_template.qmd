@@ -1,0 +1,112 @@
+---
+format: 
+  dashboard:
+    scrolling: false
+    
+title: The Challenges Hall of Fame
+---
+
+<!-- Google Font Import for Caveat -->
+
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+
+```{=html}
+<style>
+  /* Apply the Caveat font to the winner name */
+  .winner {
+    font-family: 'Caveat', cursive;
+    font-size: 32px;
+    font-weight: bold;
+  }
+
+  /* Apply the Poppins font to the announcement text */
+  .announcement {
+    font-family: 'Poppins', sans-serif;
+    font-size: 22px;
+    text-align: center;
+  }
+
+  /* Background colors for each announcement block */
+  .lavender { background-color: Lavender; }
+  .lightcyan { background-color: LightCyan; }
+  .mistyrose { background-color: MistyRose; }
+  .honeydew { background-color: HoneyDew; }
+  .lavenderblush { background-color: LavenderBlush; }
+</style>
+```
+
+::: {.announcement .lavender}
+🎉 First Set Challenges Winner 🎉<br> [Erika]{.winner}
+:::
+
+::: {.announcement .lightcyan}
+🎉 Second Set Challenges Winner 🎉<br> [Ayush, Cameron]{.winner}
+:::
+
+::: {.announcement .mistyrose}
+🎉 Third Set Challenges Winner 🎉<br> [Ashton, Erika]{.winner}
+:::
+
+::: {.announcement .honeydew}
+🎉 Fourth Set Challenges Winner 🎉<br> [Cameron, Galilea, Erika]{.winner}
+:::
+
+::: {.announcement .lavender}
+🎉 Fifth Set Challenges Winner 🎉<br> [Erika, Luz, Tony]{.winner}
+:::
+
+::: {.announcement .lightcyan}
+🎉 Sixth Set Challenges Winner 🎉<br> [Ashton]{.winner}
+:::
+
+::: {.announcement .mistyrose}
+🎉 Seventh Set Challenges Winner 🎉<br> [Ibrahim, Erika]{.winner}
+:::
+
+```{r, echo=FALSE, results='asis'}
+cat(htmltools::HTML('
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+<script>
+  var end = Date.now() + (1 * 1000);
+  var colors = ["#C8102E", "#343a40"];
+  (function frame() {
+    confetti({
+      particleCount: 2,   
+      angle: 60,
+      spread: 55,
+      origin: { x: 0 },
+      colors: colors
+    });
+    confetti({
+      particleCount: 2,
+      angle: 120,
+      spread: 55,
+      origin: { x: 1 },
+      colors: colors
+    });
+    if (Date.now() < end) {
+      requestAnimationFrame(frame);
+    }
+  }());
+</script>
+<script>
+  setTimeout(function() {
+    var duration = 40 * 1000;
+    var animationEnd = Date.now() + duration;
+    var defaults = { startVelocity: 20, spread: 360, ticks: 60, zIndex: 0 };
+    function randomInRange(min, max) {
+      return Math.random() * (max - min) + min;
+    }
+    var interval = setInterval(function() {
+      var timeLeft = animationEnd - Date.now();
+      if (timeLeft <= 0) {
+        return clearInterval(interval);
+      }
+      var particleCount = 50 * (timeLeft / duration);
+      confetti({ ...defaults, particleCount, origin: { x: randomInRange(0.1, 0.3), y: Math.random() - 0.2 } });
+      confetti({ ...defaults, particleCount, origin: { x: randomInRange(0.7, 0.9), y: Math.random() - 0.2 } });
+    }, 250);
+  }, 1500); 
+</script>
+'))
+```
