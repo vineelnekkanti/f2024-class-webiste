@@ -2,7 +2,6 @@
 title: "About"
 ---
 
-
 ```{r, echo=FALSE, results='asis'}
 # Inject JavaScript to check authentication status and redirect if necessary
 cat(htmltools::HTML('<script>

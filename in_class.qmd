@@ -4,14 +4,7 @@ format: html
 editor: visual
 ---
 
-```{r, echo=FALSE, results='asis'}
-# Inject JavaScript to check authentication status and redirect if necessary
-cat(htmltools::HTML('<script>
-if (localStorage.getItem("isLoggedIn") !== "true") {
-    window.location.href = "login.html";
-}
-</script>'))
-
+```{}
 ```
 
 ## In-class Materials
@@ -70,7 +63,7 @@ Intermediate Visualizations: <a href="https://google.com" target="_blank" class=
 
 <div>
 
-Course Introduction & Getting Started: <a href="https://webcourses.niu.edu/ultra/courses/_348339_1/outline/assessment/test/_10044533_1?courseId=_348339_1&gradeitemView=details" target="_blank" class="btn btn-primary" style="margin-left: 10px;">Access here</a>
+Course Introduction & Getting Started: <a href="https://webcourses.niu.edu/ultra/courses/_3483details" target="_blank" class="btn btn-primary" style="margin-left: 10px;">Access here</a>
 
 </div>
 
@@ -78,7 +71,7 @@ Course Introduction & Getting Started: <a href="https://webcourses.niu.edu/ultra
 
 <div>
 
-Basic Manipulations: <a href="https://webcourses.niu.edu/ultra/courses/_348339_1/outline/assessment/test/_10044545_1?courseId=_348339_1&gradeitemView=details" target="_blank" class="btn btn-primary" style="margin-left: 10px;">Access here</a>
+Basic Manipulations: <a href="https://webcourses.niu.edu/ultra/courses/_348itemView=details" target="_blank" class="btn btn-primary" style="margin-left: 10px;">Access here</a>
 
 </div>
 
@@ -86,7 +79,7 @@ Basic Manipulations: <a href="https://webcourses.niu.edu/ultra/courses/_348339_1
 
 <div>
 
-Intermediate Manipulations: <a href="https://webcourses.niu.edu/ultra/courses/_348339_1/outline/assessment/test/_10044552_1?courseId=_348339_1&gradeitemView=details" class="btn btn-primary" style="margin-left: 10px;">Access here</a>
+Intermediate Manipulations: <a href="https://webcourses.niu.edu/ultra/cou339_1/outline/essment/test/_10044etails" class="btn btn-primary" style="margin-left: 10px;">Access here</a>
 
 </div>
 

@@ -3,21 +3,12 @@ title: "Faculty"
 format: html
 ---
 
-```{r, echo=FALSE, results='asis'}
-# Inject JavaScript to check authentication status and redirect if necessary
-cat(htmltools::HTML('<script>
-if (localStorage.getItem("isLoggedIn") !== "true") {
-    window.location.href = "login.html";
-}
-</script>'))
-
-```
 
 ## Instructor
 
-![](images/Dr._B.jpg){width="220" height="220" style="float:right;padding: 0 0 0 10px;" fig-alt="Course Instructor"}
+![](images/prof.png){width="220" height="220" style="float:right;padding: 0 0 0 10px;" fig-alt="Course Instructor"}
 
-**Dr. Biagio Palese** - Dr. Biagio Palese’s (a.k.a. Dr. B) teaching and research interests embrace information systems, data analytics, artificial intelligence, creators’ economy, systems beyond firms control and customer service.
+**Dr. B** - Dr. B teaching and research interests embrace information systems, data analytics, artificial intelligence, creators’ economy, systems beyond firms control and customer service.
 
 He’s a tidyverse certified instructor trainer, teaches coding workshops globally, introducing students to the tidyverse. Passionate about teaching and research, he involves students in open-source software projects. Experiences in diverse teams contribute to his academic and personal growth.
 
@@ -35,7 +26,7 @@ Beyond his academic pursuits, he is a devoted Sci-Fi enthusiast, enjoying both b
 
 | Instructor         | Booking URL                                                                                             |
 |---------------------------------------|---------------------------------|
-| Dr. B &/or Venkata | [Book Here](https://outlook.office365.com/book/OfficeHoursSpring20241@mail.niu.edu/?ae=true&login_hint) |
+| Dr. B &/or Venkata | [Book Here](https://outlook.office365.com/book/Office?ae=true&login_hint) |
 
 ::: callout-note
 ## Note

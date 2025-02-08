@@ -1,28 +1,16 @@
 ---
-title: "OMIS-482: Predictive Business Analytics With Machine Learning"
+title: " Predictive Business Analytics With Machine Learning"
 ---
 
-```{r, echo=FALSE, results='asis'}
-# Inject JavaScript to check authentication status and redirect if necessary
-cat(htmltools::HTML('<script>
-if (localStorage.getItem("isLoggedIn") !== "true") {
-    window.location.href = "login.html";
-}
-</script>'))
-
-```
 
 ## Course Description
 
 Study of advanced topics in predictive business analytics. Topics include data manipulations, data visualizations, and data modeling. Emphasis is on using and mastering powerful predictive analytics software such as R. Students enrolled in this class are expected to learn and efficiently code without supervision. Moreover, they will learn how to apply predictive modelling techniques with machine learning on case studies to see the important real-world implications of predictive analytics in business..
 
-## Course Resources
-
-All the materials and resources required to learn the topics covered in class will be available on Blackboard. The professor and TA have also developed a course website to enhance your learning experience. Students are responsible for regularly checking the course Blackboard page and the course website. Moreover, you are encouraged to study the materials uploaded or the resources linked in it on a weekly basis. The course will also have a class channel, hosted on Microsoft Teams, to foster interactions and enhance engagement among students and between students and the instructor. Instructions on how to access and use the course website and the Microsoft Teams channel will be provided during the first class..
 
 ## Class Details
 
 | Meeting             | Location         | Time                      |
 |---------------------|------------------|---------------------------|
-| Week's First Class  | Barsema Hall 333 | Tuesday 9:30 - 10:45 A.M  |
-| Week's Second Class | Barsema Hall 333 | Thursday 9:30 - 10:45 A.M |
+| Week's First Class  | XXXXXXXXX | Tuesday 9:30 - 10:45 A.M  |
+| Week's Second Class | XXXXXXXXX | Thursday 9:30 - 10:45 A.M |

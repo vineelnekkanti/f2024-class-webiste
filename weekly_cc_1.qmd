@@ -4,22 +4,9 @@ engine: knitr
 format: live-html
 ---
 
-```{r, echo=FALSE, results='asis'}
-# Inject JavaScript to check authentication status and redirect if necessary
-cat(htmltools::HTML('<script>
-if (localStorage.getItem("isLoggedIn") !== "true") {
-    window.location.href = "login.html";
-}
-</script>'))
-
-```
-
 {{< include ./_extensions/r-wasm/live/_knitr.qmd >}}
 
-::: {.callout-note}
 
-Welcome! We finally start working on the Dr. B & Class project. During the entire semester you will apply what we learned in class in a set of tasks and scenarios custom designed for you. Please remember that it is important that the code that you submit is your own code and not somebody else work. It is fine to make mistakes but only by practicing in RStudio you can get a better grasp of the software. I also want you to try building your document as an official report for a potential company (Dreaming Diamonds LLC) for which you are getting to know and explore the diamonds dataset (e.g., spend time on storytelling, commenting results and providing insights and conclusions when possible).
-:::
 
 ```{webr}
 #| output: false
@@ -33,12 +20,11 @@ install.packages("tidyverse", quiet=FALSE)
 
 ```
 
-::: {.callout-caution}
-
+::: callout-caution
 Use diamonds dataset to answer the questions.
 :::
 
-1) Load the tidyverse package.(1 point)
+1)  Load the tidyverse package.(1 point)
 
 ```{webr}
 #| persist: true
@@ -47,7 +33,7 @@ Use diamonds dataset to answer the questions.
 
 ```
 
-2) Assign the dataset diamonds (loaded with tidyverse) to an object named “diamonds”. Use the ls() function to make sure you have created the object correctly. (1 point)
+2)  Assign the dataset diamonds (loaded with tidyverse) to an object named “diamonds”. Use the ls() function to make sure you have created the object correctly. (1 point)
 
 ```{webr}
 #| persist: true
@@ -58,17 +44,7 @@ Use diamonds dataset to answer the questions.
 
 ```
 
-3) Use the mean function to compute the average of the “price” variable/column. Use the help function to learn more about the mean function. [Hint: use diamonds$price inside the function). What is the average price of the diamonds in your dataset?] (1 point)
-
-```{webr}
-#| persist: true
-#| autorun: false
-
-
-
-```
-
-4) Use the median function to compute the median of the “carat” variable/column. Use the help function to learn more about the median function. [Hint: use diamonds$carat inside the function). What is the median carat of the diamonds in your dataset?] (1 point)
+3)  Use the mean function to compute the average of the “price” variable/column. Use the help function to learn more about the mean function. \[Hint: use diamonds\$price inside the function). What is the average price of the diamonds in your dataset?\] (1 point)
 
 ```{webr}
 #| persist: true
@@ -78,11 +54,13 @@ Use diamonds dataset to answer the questions.
 
 ```
 
+4)  Use the median function to compute the median of the “carat” variable/column. Use the help function to learn more about the median function. \[Hint: use diamonds\$carat inside the function). What is the median carat of the diamonds in your dataset?\] (1 point)
 
-::: callout-note
-# Reminder: 
-Make sure that you Run all the code chunks and check your outputs here and transfer all your solutions to this form:
+```{webr}
+#| persist: true
+#| autorun: false
 
-<a href="https://forms.office.com/r/D7NxFr2p2a?embed=true" target="_blank">Submit here</a></p>
- 
-:::
+
+
+```
+
